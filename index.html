@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Pribadi - Salam Karisma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #ffd700;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav button {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    nav button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .section {
+      display: none;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img.profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+
+    ul {
+      list-style: none;
+      line-height: 2;
+    }
+
+    .portfolio-item h4 {
+      color: var(--accent-color);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .contact-form button {
+      background: var(--accent-color);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: rgba(255,255,255,0.3);
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      margin-top: 1rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Halo, Saya <span style="color: var(--accent-color);">Salam Karisma</span></h1>
+    <p>Website Pribadi & Portofolio</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">Beranda</button>
+    <button onclick="showSection('profile')">Profil</button>
+    <button onclick="showSection('portfolio')">Portofolio</button>
+    <button onclick="showSection('gallery')">Galeri</button>
+    <button onclick="showSection('contact')">Kontak</button>
+  </nav>
+
+  <div class="container">
+    <!-- Beranda -->
+    <div id="home" class="section active card">
+      <img src="img/salam.jpg" alt="Foto Profil" class="profile-pic">
+      <h2>Selamat Datang 👋</h2>
+      <p>Ini adalah website pribadi saya. Di sini kamu bisa mengetahui lebih banyak tentang saya, melihat karya-karya saya, dan menghubungi saya secara langsung. Terima kasih sudah berkunjung!</p>
+    </div>
+
+    <!-- Profil -->
+    <div id="profile" class="section card">
+      <h2>Profil Diri</h2>
+      <ul>
+        <li><strong>Nama:</strong> Salam Karisma</li>
+        <li><strong>Tempat, Tanggal Lahir:</strong> Sukabumi, 1 Januari 2000</li>
+        <li><strong>Profesi:</strong> Guru</li>
+        <li><strong>Pendidikan:</strong> S1 Teknik Informatika</li>
+        <li><strong>Hobi:</strong> Coding, Fotografi, Membaca</li>
+        <li><strong>Motto:</strong> "Terus belajar, terus berkembang."</li>
+      </ul>
+      <button class="back-button" onclick="showSection('home')">← Kembali</button>
+    </div>
+
+    <!-- Portofolio -->
+    <div id="portfolio" class="section card">
+      <h2>Portofolio</h2>
+      <div class="portfolio-item">
+        <h4>Website Company Profile</h4>
+        <p>Membuat website resmi untuk perusahaan X menggunakan HTML, CSS, dan JavaScript.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>Aplikasi To-Do List</h4>
+        <p>Proyek pribadi berbasis React untuk manajemen tugas harian.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>Desain UI Mobile App</h4>
+        <p>Merancang antarmuka aplikasi mobile untuk startup fintech.</p>
+      </div>
+      <button class="back-button" onclick="showSection('home')">← Kembali</button>
+    </div>
+
+    <!-- Galeri -->
+    <div id="gallery" class="section card">
+      <h2>Galeri Foto</h2>
+      <p>Kumpulan dokumentasi kegiatan, karya seni, dan momen menarik lainnya.</p>
+      <div class="gallery-grid">
+        <img src="img/ger.jpeg" alt="Alam 1">
+        <img src="img/gg.jpeg" alt="Alam 2">
+        <img src="img/karisma.jpeg" alt="Alam 3">
+        <img src="img/salm.jpeg" alt="Alam 4">
+        <img src="https://source.unsplash.com/400x300/?sky" alt="Alam 5">
+        <img src="https://source.unsplash.com/400x300/?trees" alt="Alam 6">
+      </div>
+      <button class="back-button" onclick="showSection('home')">← Kembali</button>
+    </div>
+
+    <!-- Kontak -->
+    <div id="contact" class="section card">
+      <h2>Kontak Saya</h2>
+      <p>Silakan hubungi saya melalui formulir di bawah ini:</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Nama Anda" required />
+        <input type="email" placeholder="Email Anda" required />
+        <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <button class="back-button" onclick="showSection('home')">← Kembali</button>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
